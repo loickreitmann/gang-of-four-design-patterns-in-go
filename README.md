@@ -7,7 +7,7 @@
 #### 1. [Abstract Factory](creational/abstract-factory/main.go)
 Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
-#### 2. Builder
+#### 2. [Builder](creational/builder/main.go)
 Separates the construction of a complex object from its representation so that the same construction process can create different representations.
 
 #### 3. Factory Method
