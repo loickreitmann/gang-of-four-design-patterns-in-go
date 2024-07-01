@@ -1,4 +1,4 @@
-# Design Patters in Go
+# Design Patterns in Go
 
 **Design Patterns** are a set of 23 classic design patterns in software development, described in the book *Design Patterns: Elements of Reusable Object-Oriented Software*. The book was authored by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides, who are collectively known as the **Gang of Four**. They described these patterns as solutions to common problems in software design. They are divided into three categories: Creational, Structural, and Behavioral.
 
@@ -10,7 +10,7 @@ Provides an interface for creating families of related or dependent objects with
 #### 2. [Builder](creational/builder/main.go)
 Separates the construction of a complex object from its representation so that the same construction process can create different representations.
 
-#### 3. Factory Method
+#### 3. [Factory Method](creational/factory-method/main.go)
 Defines an interface for creating an object but lets subclasses alter the type of objects that will be created.
 
 #### 4. Prototype
