@@ -13,7 +13,7 @@ Separates the construction of a complex object from its representation so that t
 #### 3. [Factory Method](creational/factory-method/main.go)
 Defines an interface for creating an object but lets subclasses alter the type of objects that will be created.
 
-#### 4. Prototype
+#### 4. [Prototype](creational/prototype/main.go)
 Specifies the kinds of objects to create using a prototypical instance and creates new objects by copying this prototype.
 
 #### 5. Singleton
