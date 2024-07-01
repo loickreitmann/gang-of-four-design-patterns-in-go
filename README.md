@@ -16,5 +16,5 @@ Defines an interface for creating an object but lets subclasses alter the type o
 #### 4. [Prototype](creational/prototype/main.go)
 Specifies the kinds of objects to create using a prototypical instance and creates new objects by copying this prototype.
 
-#### 5. Singleton
+#### 5. [Singleton](creational/singleton/main.go)
 Ensures a class has only one instance and provides a global point of access to it.
