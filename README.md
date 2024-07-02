@@ -2,6 +2,8 @@
 
 **Design Patterns** are a set of 23 classic design patterns in software development, described in the book *Design Patterns: Elements of Reusable Object-Oriented Software*. The book was authored by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides, who are collectively known as the **Gang of Four**. They described these patterns as solutions to common problems in software design. They are divided into three categories: Creational, Structural, and Behavioral.
 
+The following design patterns are foundational in object-oriented software development and are widely used to create flexible, reusable, and maintainable code.
+
 ## A. Creational Patterns
 
 #### 1. [Abstract Factory](creational/abstract-factory/main.go)
@@ -41,3 +43,9 @@ Uses sharing to support large numbers of fine-grained objects efficiently.
 
 #### 7. [Proxy](structural/proxy/main.go)
 Provides a surrogate or placeholder for another object to control access to it.
+
+## C. Behavioral Patterns
+
+#### 1. [Chain of Responsibility](behavioral/chain-of-responsibility/main.go)
+Passes a request along a chain of handlers, allowing multiple objects a chance to handle the request.
+
