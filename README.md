@@ -21,5 +21,5 @@ Ensures a class has only one instance and provides a global point of access to i
 
 ## B. Structural Patterns
 
-#### 1. Adapter:
+#### 1. [Adapter](structural/adapter/main.go)
 Converts the interface of a class into another interface that clients expect, allowing classes to work together that couldn't otherwise because of incompatible interfaces.
