@@ -55,3 +55,6 @@ Encapsulates a request as an object, thereby allowing for parameterization of cl
 #### 3. [Interpreter](behavioral/interpreter/main.go)
 Defines a representation for a language's grammar and uses an interpreter to interpret sentences in the language.
 
+#### 4. [Iterator](behavioral/iterator/main.go)
+Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+
