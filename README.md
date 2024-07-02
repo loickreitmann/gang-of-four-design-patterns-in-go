@@ -64,3 +64,6 @@ Defines an object that encapsulates how a set of objects interact, promoting loo
 #### 6. [Memento](behavioral/memento/main.go)
 Captures and externalizes an object's internal state without violating encapsulation, so the object can be restored to this state later.
 
+#### 7. [Observer](behavioral/observer/main.go)
+Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+
