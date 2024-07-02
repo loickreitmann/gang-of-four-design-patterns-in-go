@@ -35,3 +35,6 @@ Attaches additional responsibilities to an object dynamically, providing a flexi
 
 #### 5. [Facade](structural/facade/main.go)
 Provides a unified interface to a set of interfaces in a subsystem, making the subsystem easier to use.
+
+#### 6. [Flyweight](structural/flyweight/main.go)
+Uses sharing to support large numbers of fine-grained objects efficiently.
