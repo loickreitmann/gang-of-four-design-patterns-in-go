@@ -58,3 +58,6 @@ Defines a representation for a language's grammar and uses an interpreter to int
 #### 4. [Iterator](behavioral/iterator/main.go)
 Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
 
+#### 5. [Mediator](behavioral/mediator/main.go)
+Defines an object that encapsulates how a set of objects interact, promoting loose coupling.
+
