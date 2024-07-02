@@ -52,3 +52,6 @@ Passes a request along a chain of handlers, allowing multiple objects a chance t
 #### 2. [Command](behavioral/command/main.go)
 Encapsulates a request as an object, thereby allowing for parameterization of clients with queues, requests, and operations.
 
+#### 3. [Interpreter](behavioral/interpreter/main.go)
+Defines a representation for a language's grammar and uses an interpreter to interpret sentences in the language.
+
