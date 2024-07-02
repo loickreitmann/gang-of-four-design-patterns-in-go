@@ -32,3 +32,6 @@ Composes objects into tree structures to represent part-whole hierarchies, allow
 
 #### 4. [Decorator](structural/decorator/main.go)
 Attaches additional responsibilities to an object dynamically, providing a flexible alternative to subclassing for extending functionality.
+
+#### 5. [Facade](structural/facade/main.go)
+Provides a unified interface to a set of interfaces in a subsystem, making the subsystem easier to use.
