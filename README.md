@@ -76,3 +76,5 @@ Defines a family of algorithms, encapsulates each one, and makes them interchang
 #### 10. [Template Method](behavioral/template-method/main.go)
 Defines the skeleton of an algorithm in an operation, deferring some steps to subclasses.
 
+#### 11. [Visitor](behavioral/visitor/main.go)
+Represents an operation to be performed on elements of an object structure, allowing new operations to be defined without changing the classes of the elements on which it operates.
