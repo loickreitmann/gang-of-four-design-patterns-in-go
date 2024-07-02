@@ -1,33 +1,16 @@
 package main
 
 import (
-	"bytes"
-	"os"
+	"gang_of_four_design_patterns_in_go/helper"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
-// Helper function to capture output
-func captureOutput(f func()) string {
-	var buf bytes.Buffer
-	writer := os.Stdout
-	r, w, _ := os.Pipe()
-	os.Stdout = w
-
-	f()
-
-	w.Close()
-	os.Stdout = writer
-
-	buf.ReadFrom(r)
-	return buf.String()
-}
-
 func TestConcreteClassPrimitiveOperation1(t *testing.T) {
 	class := &ConcreteClass{}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		class.PrimitiveOperation1()
 	})
 
@@ -38,7 +21,7 @@ func TestConcreteClassPrimitiveOperation1(t *testing.T) {
 func TestConcreteClassPrimitiveOperation2(t *testing.T) {
 	class := &ConcreteClass{}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		class.PrimitiveOperation2()
 	})
 
@@ -49,7 +32,7 @@ func TestConcreteClassPrimitiveOperation2(t *testing.T) {
 func TestConcreteClassTemplateMethod(t *testing.T) {
 	class := &ConcreteClass{}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		class.TemplateMethod()
 	})
 

@@ -1,34 +1,18 @@
 package main
 
 import (
-	"bytes"
-	"os"
 	"strings"
 	"testing"
+
+	"gang_of_four_design_patterns_in_go/helper"
 
 	"github.com/stretchr/testify/assert"
 )
 
-// Helper function to capture output
-func captureOutput(f func()) string {
-	var buf bytes.Buffer
-	writer := os.Stdout
-	r, w, _ := os.Pipe()
-	os.Stdout = w
-
-	f()
-
-	w.Close()
-	os.Stdout = writer
-
-	buf.ReadFrom(r)
-	return buf.String()
-}
-
 func TestPrintCommandExecute(t *testing.T) {
 	command := &PrintCommand{message: "Test Message"}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		command.Execute()
 	})
 
@@ -43,7 +27,7 @@ func TestInvokerStoreAndExecuteCommands(t *testing.T) {
 	invoker.StoreCommand(&PrintCommand{message: msgs[1]})
 	invoker.StoreCommand(&PrintCommand{message: msgs[2]})
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		invoker.ExecuteCommands()
 	})
 
@@ -54,7 +38,7 @@ func TestInvokerStoreAndExecuteCommands(t *testing.T) {
 func TestInvokerExecuteNoCommands(t *testing.T) {
 	invoker := &Invoker{}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		invoker.ExecuteCommands()
 	})
 

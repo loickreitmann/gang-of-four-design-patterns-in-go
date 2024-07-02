@@ -1,33 +1,16 @@
 package main
 
 import (
-	"bytes"
-	"os"
+	"gang_of_four_design_patterns_in_go/helper"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
-// Helper function to capture output
-func captureOutput(f func()) string {
-	var buf bytes.Buffer
-	writer := os.Stdout
-	r, w, _ := os.Pipe()
-	os.Stdout = w
-
-	f()
-
-	w.Close()
-	os.Stdout = writer
-
-	buf.ReadFrom(r)
-	return buf.String()
-}
-
 func TestSubsystemAOperationA(t *testing.T) {
 	subsystemA := &SubsystemA{}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		subsystemA.OperationA()
 	})
 
@@ -38,7 +21,7 @@ func TestSubsystemAOperationA(t *testing.T) {
 func TestSubsystemBOperationB(t *testing.T) {
 	subsystemB := &SubsystemB{}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		subsystemB.OperationB()
 	})
 
@@ -49,7 +32,7 @@ func TestSubsystemBOperationB(t *testing.T) {
 func TestFacadeOperation(t *testing.T) {
 	facade := &Facade{}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		facade.Operation()
 	})
 

@@ -1,28 +1,12 @@
 package main
 
 import (
-	"bytes"
-	"os"
 	"testing"
+
+	"gang_of_four_design_patterns_in_go/helper"
 
 	"github.com/stretchr/testify/assert"
 )
-
-// Helper function to capture output
-func captureOutput(f func()) string {
-	var buf bytes.Buffer
-	writer := os.Stdout
-	r, w, _ := os.Pipe()
-	os.Stdout = w
-
-	f()
-
-	w.Close()
-	os.Stdout = writer
-
-	buf.ReadFrom(r)
-	return buf.String()
-}
 
 func TestConcreteColleagueSend(t *testing.T) {
 	mediator := &ConcreteMediator{}
@@ -35,7 +19,7 @@ func TestConcreteColleagueSend(t *testing.T) {
 	mediator.SetColleague1(colleague1)
 	mediator.SetColleague2(colleague2)
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		colleague1.Send("Hello, there.")
 		colleague2.Send("This is where the fun begins!")
 	})
@@ -55,7 +39,7 @@ func TestConcreteMediatorSend(t *testing.T) {
 	mediator.SetColleague1(colleague1)
 	mediator.SetColleague2(colleague2)
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		mediator.Send("Message from Obi Wan", colleague1)
 		mediator.Send("Message from Anakin", colleague2)
 	})
@@ -67,7 +51,7 @@ func TestConcreteMediatorSend(t *testing.T) {
 func TestColleagueReceive(t *testing.T) {
 	colleague := &ConcreteColleague{name: "Yoda"}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		colleague.Receive("May the Force be with you.")
 	})
 

@@ -1,33 +1,16 @@
 package main
 
 import (
-	"bytes"
-	"os"
+	"gang_of_four_design_patterns_in_go/helper"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
-// Helper function to capture output
-func captureOutput(f func()) string {
-	var buf bytes.Buffer
-	writer := os.Stdout
-	r, w, _ := os.Pipe()
-	os.Stdout = w
-
-	f()
-
-	w.Close()
-	os.Stdout = writer
-
-	buf.ReadFrom(r)
-	return buf.String()
-}
-
 func TestDeveloperShowDetails(t *testing.T) {
 	dev := &Developer{Name: "John"}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		dev.ShowDetails()
 	})
 
@@ -38,7 +21,7 @@ func TestDeveloperShowDetails(t *testing.T) {
 func TestManagerShowDetails(t *testing.T) {
 	manager := &Manager{Name: "Alice"}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		manager.ShowDetails()
 	})
 
@@ -55,7 +38,7 @@ func TestDirectoryShowDetails(t *testing.T) {
 		Employees: []Employee{dev1, dev2, manager},
 	}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		dir.ShowDetails()
 	})
 

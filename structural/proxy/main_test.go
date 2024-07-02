@@ -1,33 +1,16 @@
 package main
 
 import (
-	"bytes"
-	"os"
+	"gang_of_four_design_patterns_in_go/helper"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
-// Helper function to capture output
-func captureOutput(f func()) string {
-	var buf bytes.Buffer
-	writer := os.Stdout
-	r, w, _ := os.Pipe()
-	os.Stdout = w
-
-	f()
-
-	w.Close()
-	os.Stdout = writer
-
-	buf.ReadFrom(r)
-	return buf.String()
-}
-
 func TestRealSubjectRequest(t *testing.T) {
 	realSubject := &RealSubject{}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		realSubject.Request()
 	})
 
@@ -38,7 +21,7 @@ func TestRealSubjectRequest(t *testing.T) {
 func TestProxyRequest(t *testing.T) {
 	proxy := &Proxy{}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		proxy.Request()
 	})
 
@@ -49,7 +32,7 @@ func TestProxyRequest(t *testing.T) {
 func TestProxyRequestCalledTwice(t *testing.T) {
 	proxy := &Proxy{}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		proxy.Request()
 		proxy.Request()
 	})

@@ -1,33 +1,16 @@
 package main
 
 import (
-	"bytes"
-	"os"
+	"gang_of_four_design_patterns_in_go/helper"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
-// Helper function to capture output
-func captureOutput(f func()) string {
-	var buf bytes.Buffer
-	writer := os.Stdout
-	r, w, _ := os.Pipe()
-	os.Stdout = w
-
-	f()
-
-	w.Close()
-	os.Stdout = writer
-
-	buf.ReadFrom(r)
-	return buf.String()
-}
-
 func TestCircleDraw(t *testing.T) {
 	circle := &Circle{color: "Red"}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		circle.Draw()
 	})
 
@@ -53,7 +36,7 @@ func TestShapeFactoryGetCircle(t *testing.T) {
 func TestShapeFactoryDrawCircles(t *testing.T) {
 	factory := &ShapeFactory{}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		circle1 := factory.GetCircle("Red")
 		circle1.Draw()
 

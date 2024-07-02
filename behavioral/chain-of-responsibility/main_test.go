@@ -1,28 +1,12 @@
 package main
 
 import (
-	"bytes"
-	"os"
 	"testing"
+
+	"gang_of_four_design_patterns_in_go/helper"
 
 	"github.com/stretchr/testify/assert"
 )
-
-// Helper function to capture output
-func captureOutput(f func()) string {
-	var buf bytes.Buffer
-	writer := os.Stdout
-	r, w, _ := os.Pipe()
-	os.Stdout = w
-
-	f()
-
-	w.Close()
-	os.Stdout = writer
-
-	buf.ReadFrom(r)
-	return buf.String()
-}
 
 func TestConcreteHandlerSetNext(t *testing.T) {
 	handler1 := &ConcreteHandler{name: "one"}
@@ -36,7 +20,7 @@ func TestConcreteHandlerSetNext(t *testing.T) {
 func TestConcreteHandlerHandle(t *testing.T) {
 	handler1 := &ConcreteHandler{name: "one"}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		handler1.Handle("Process this request")
 	})
 
@@ -54,7 +38,7 @@ func TestConcreteHandlerChain(t *testing.T) {
 	handler2.SetNext(handler3)
 	handler3.SetNext(handler4)
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		handler1.Handle("Process this request")
 	})
 

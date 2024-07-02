@@ -1,28 +1,11 @@
 package main
 
 import (
-	"bytes"
-	"os"
+	"gang_of_four_design_patterns_in_go/helper"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
-
-// Helper function to capture output
-func captureOutput(f func()) string {
-	var buf bytes.Buffer
-	writer := os.Stdout
-	r, w, _ := os.Pipe()
-	os.Stdout = w
-
-	f()
-
-	w.Close()
-	os.Stdout = writer
-
-	buf.ReadFrom(r)
-	return buf.String()
-}
 
 func TestObserverPattern(t *testing.T) {
 	subject := &Subject{}
@@ -33,13 +16,13 @@ func TestObserverPattern(t *testing.T) {
 	subject.AddObserver(observer1)
 	subject.AddObserver(observer2)
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		subject.SetState("À la maison")
 	})
 	expectedOutput := "Papa où t'ai ? À la maison\nAri où t'ai ? À la maison\n"
 	assert.Equal(t, expectedOutput, output, "Output should match the expected format")
 
-	output = captureOutput(func() {
+	output = helper.CaptureOutput(func() {
 		subject.RemoveObserver(observer1)
 		subject.SetState("Au parc")
 	})
@@ -58,7 +41,7 @@ func TestRemoveObserver(t *testing.T) {
 
 	subject.RemoveObserver(observer1)
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		subject.SetState("Au parc")
 	})
 	expectedOutput := "Ari où t'ai ? Au parc\n"

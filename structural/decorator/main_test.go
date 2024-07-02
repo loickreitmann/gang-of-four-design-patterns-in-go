@@ -1,33 +1,16 @@
 package main
 
 import (
-	"bytes"
-	"os"
+	"gang_of_four_design_patterns_in_go/helper"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
-// Helper function to capture output
-func captureOutput(f func()) string {
-	var buf bytes.Buffer
-	writer := os.Stdout
-	r, w, _ := os.Pipe()
-	os.Stdout = w
-
-	f()
-
-	w.Close()
-	os.Stdout = writer
-
-	buf.ReadFrom(r)
-	return buf.String()
-}
-
 func TestEmailNotifierSend(t *testing.T) {
 	emailNotifier := &EmailNotifier{}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		emailNotifier.Send("Hello Email")
 	})
 
@@ -39,7 +22,7 @@ func TestSMSNotifierSend(t *testing.T) {
 	emailNotifier := &EmailNotifier{}
 	smsNotifier := &SMSNotifier{NotifierDecorator{emailNotifier}}
 
-	output := captureOutput(func() {
+	output := helper.CaptureOutput(func() {
 		smsNotifier.Send("Hello SMS")
 	})
 
