@@ -67,3 +67,6 @@ Captures and externalizes an object's internal state without violating encapsula
 #### 7. [Observer](behavioral/observer/main.go)
 Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
+#### 8. [State](behavioral/state/main.go)
+Allows an object to alter its behavior when its internal state changes, appearing as if the object changed its class.
+
