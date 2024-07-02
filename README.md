@@ -49,3 +49,6 @@ Provides a surrogate or placeholder for another object to control access to it.
 #### 1. [Chain of Responsibility](behavioral/chain-of-responsibility/main.go)
 Passes a request along a chain of handlers, allowing multiple objects a chance to handle the request.
 
+#### 2. [Command](behavioral/command/main.go)
+Encapsulates a request as an object, thereby allowing for parameterization of clients with queues, requests, and operations.
+
