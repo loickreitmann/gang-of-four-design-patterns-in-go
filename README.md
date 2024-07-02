@@ -38,3 +38,6 @@ Provides a unified interface to a set of interfaces in a subsystem, making the s
 
 #### 6. [Flyweight](structural/flyweight/main.go)
 Uses sharing to support large numbers of fine-grained objects efficiently.
+
+#### 7. [Proxy](structural/proxy/main.go)
+Provides a surrogate or placeholder for another object to control access to it.
