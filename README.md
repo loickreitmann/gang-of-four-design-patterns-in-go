@@ -26,3 +26,6 @@ Converts the interface of a class into another interface that clients expect, al
 
 #### 2. [Bridge](structural/bridge/main.go)
 Separates an object's interface from its implementation so the two can vary independently.
+
+#### 3. [Composite](structural/composite/main.go)
+Composes objects into tree structures to represent part-whole hierarchies, allowing clients to treat individual objects and compositions uniformly.
