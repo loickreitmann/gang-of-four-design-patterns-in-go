@@ -73,3 +73,6 @@ Allows an object to alter its behavior when its internal state changes, appearin
 #### 9. [Strategy](behavioral/strategy/main.go)
 Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
 
+#### 10. [Template Method](behavioral/template-method/main.go)
+Defines the skeleton of an algorithm in an operation, deferring some steps to subclasses.
+
