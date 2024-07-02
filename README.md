@@ -70,3 +70,6 @@ Defines a one-to-many dependency between objects so that when one object changes
 #### 8. [State](behavioral/state/main.go)
 Allows an object to alter its behavior when its internal state changes, appearing as if the object changed its class.
 
+#### 9. [Strategy](behavioral/strategy/main.go)
+Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+
