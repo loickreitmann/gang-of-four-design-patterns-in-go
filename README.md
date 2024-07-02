@@ -29,3 +29,6 @@ Separates an object's interface from its implementation so the two can vary inde
 
 #### 3. [Composite](structural/composite/main.go)
 Composes objects into tree structures to represent part-whole hierarchies, allowing clients to treat individual objects and compositions uniformly.
+
+#### 4. [Decorator](structural/decorator/main.go)
+Attaches additional responsibilities to an object dynamically, providing a flexible alternative to subclassing for extending functionality.
