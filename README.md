@@ -61,3 +61,6 @@ Provides a way to access the elements of an aggregate object sequentially withou
 #### 5. [Mediator](behavioral/mediator/main.go)
 Defines an object that encapsulates how a set of objects interact, promoting loose coupling.
 
+#### 6. [Memento](behavioral/memento/main.go)
+Captures and externalizes an object's internal state without violating encapsulation, so the object can be restored to this state later.
+
