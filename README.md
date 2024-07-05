@@ -71,7 +71,7 @@ Defines a one-to-many dependency between objects so that when one object changes
 Allows an object to alter its behavior when its internal state changes, appearing as if the object changed its class.
 
 #### 9. [Strategy](behavioral/strategy/main.go)
-Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+Defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
 
 #### 10. [Template Method](behavioral/template-method/main.go)
 Defines the skeleton of an algorithm in an operation, deferring some steps to subclasses.
